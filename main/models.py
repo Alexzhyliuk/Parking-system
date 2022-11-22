@@ -12,6 +12,9 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} {self.car_number}"
 
+    class Meta:
+        verbose_name_plural = "Профили"
+
 
 class Question(models.Model):
 
@@ -27,6 +30,9 @@ class Question(models.Model):
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name}: {self.get_status_display()}"
 
+    class Meta:
+        verbose_name_plural = "Вопросы"
+
 
 class Parking(models.Model):
 
@@ -34,6 +40,9 @@ class Parking(models.Model):
 
     def __str__(self):
         return f"{self.address}"
+
+    class Meta:
+        verbose_name_plural = "Парковки"
 
 
 class ParkingPlaceType(models.Model):
@@ -51,6 +60,9 @@ class ParkingPlaceType(models.Model):
         response += f"{'Для инвалидов' if self.is_for_disabled else ''}"
         return response
 
+    class Meta:
+        verbose_name_plural = "Типы парковочных мест"
+
 
 class ParkingPlaceStatus(models.Model):
 
@@ -58,6 +70,9 @@ class ParkingPlaceStatus(models.Model):
 
     def __str__(self):
         return f"{self.status}"
+
+    class Meta:
+        verbose_name_plural = "Статусы парковочных мест"
 
 
 class ParkingPlace(models.Model):
@@ -69,6 +84,9 @@ class ParkingPlace(models.Model):
 
     def __str__(self):
         return f"{self.number} - {self.parking.address}"
+
+    class Meta:
+        verbose_name_plural = "Парковочные места"
 
 
 class Preferences(models.Model):
@@ -88,6 +106,9 @@ class Preferences(models.Model):
         response += f"{'Для инвалидов' if self.is_for_disabled else ''}"
         return response
 
+    class Meta:
+        verbose_name_plural = "Предпочтение пользователей"
+
 
 class Log(models.Model):
 
@@ -98,3 +119,6 @@ class Log(models.Model):
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} booked {self.parking_place.number}th parking space" \
                f" at {self.parking_place.parking.address}"
+
+    class Meta:
+        verbose_name_plural = "Логи"
