@@ -1,192 +1,31 @@
 {% extends 'main/header.html' %}
 {% block content %}
 <form id="form" style="font-family: Quicksand, sans-serif;background-color: rgba(44,40,52,0.9);width: 2500px;padding: 40px;">
-    <select name="user_profile_color_1" label="адрес" style="color:black; width: 500px; margin-left: 120px ">
-  <option value="adress">какой-то адрес</option>
- </select>
-<select name="user_profile_color_1" label="Фильтры" style="color:black; width: 500px; margin-left: 120px ">
-  <option value="adress">крытое</option>
-      <option value="adress">открытое</option>
-
- </select>
+    <label for="open">Открытое</label>
+    <input type="checkbox" value="Открытое" id="open"> <br>
+    <label for="cover">Крытое</label>
+    <input type="checkbox" value="Открытое" id="cover"> <br>
+    <label for="enter">Рядом со входом</label>
+    <input type="checkbox" value="Открытое" id="enter"> <br>
+    <label for="exit">Рядом с выездом</label>
+    <input type="checkbox" value="Открытое" id="exit"> <br>
+    <label for="disabled">Для инвалидов</label>
+    <input type="checkbox" value="Открытое" id="disabled">
 <div class="wrapper">
    <div class="places">
-       <div class="place booked" data-id="1">
-       1
-       <div class="descr">
-            Какой-то текст который должен быть в блоке<br>
-            <a href="#">Интересная ссылка</a>
-       </div>
-   </div>
-       <div class="place" data-id="2">
-           2
+       {% for place, booked in places.items %}
+        <div class="place {% if booked %}booked{% endif %}" data-id="{{ place }}">
+           {{ place }}
            <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
+                Открытое <br>
+                Возле выезда со стоянки <br>
+                {% if not booked %}
+                <a href="#">Забронировать</a>
+               {% endif %}
            </div>
        </div>
-       <div class="place booked" data-id="3">
-           3
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place" data-id="4">
-           4
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place" data-id="5">
-       5
-       <div class="descr">
-            Какой-то текст который должен быть в блоке<br>
-            <a href="#">Интересная ссылка</a>
-       </div>
-   </div>
-       <div class="place booked" data-id="6">
-       6
-       <div class="descr">
-            Какой-то текст который должен быть в блоке<br>
-            <a href="#">Интересная ссылка</a>
-       </div>
-   </div>
-       <div class="place" data-id="7">
-           7
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place booked" data-id="8">
-           8
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place" data-id="9">
-           9
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place" data-id="10">
-       10
-       <div class="descr">
-            Какой-то текст который должен быть в блоке<br>
-            <a href="#">Интересная ссылка</a>
-       </div>
-   </div>
-       <div class="place booked" data-id="11">
-       11
-       <div class="descr">
-            Какой-то текст который должен быть в блоке<br>
-            <a href="#">Интересная ссылка</a>
-       </div>
-   </div>
-       <div class="place" data-id="12">
-           12
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place booked" data-id="13">
-           13
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place" data-id="14">
-           14
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place" data-id="15">
-       15
-       <div class="descr">
-            Какой-то текст который должен быть в блоке<br>
-            <a href="#">Интересная ссылка</a>
-       </div>
-   </div>
-       <div class="place booked" data-id="16">
-       16
-       <div class="descr">
-            Какой-то текст который должен быть в блоке<br>
-            <a href="#">Интересная ссылка</a>
-       </div>
-   </div>
-       <div class="place" data-id="17">
-           17
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place booked" data-id="18">
-           18
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place" data-id="19">
-           19
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place" data-id="20">
-       20
-       <div class="descr">
-            Какой-то текст который должен быть в блоке<br>
-            <a href="#">Интересная ссылка</a>
-       </div>
-   </div>
-       <div class="place booked" data-id="21">
-       21
-       <div class="descr">
-            Какой-то текст который должен быть в блоке<br>
-            <a href="#">Интересная ссылка</a>
-       </div>
-   </div>
-       <div class="place" data-id="22">
-           22
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place booked" data-id="23">
-           23
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place" data-id="24">
-           24
-           <div class="descr">
-                Какой-то текст который должен быть в блоке<br>
-                <a href="#">Интересная ссылка</a>
-           </div>
-       </div>
-       <div class="place" data-id="25">
-       25
-       <div class="descr">
-            Какой-то текст который должен быть в блоке<br>
-            <a href="#">Интересная ссылка</a>
-       </div>
-   </div>
+       {% endfor %}
    </div>
 </div>
- </form>
 {% endblock %}
+</form>
