@@ -1,0 +1,25 @@
+{% extends 'main/header.html' %}
+{% block content %}
+<form id="form" style="font-family: Quicksand, sans-serif;background-color: rgba(44,40,52,0.9);width: 2500px;padding: 40px;">
+    <select name="user_profile_color_1" label="адрес" style="color:black; width: 500px; margin-left: 120px ">
+  <option value="adress">какой-то адрес</option>
+ </select>
+<select name="user_profile_color_1" label="Фильтры" style="color:black; width: 500px; margin-left: 120px ">
+  <option value="adress">крытое</option>
+      <option value="adress">открытое</option>
+
+ </select>
+<div class="wrapper">
+   <div class="box1" id="rectangle">
+   <div class="descr">
+Какой-то текст который должен быть в блоке<br>
+<a href="#">Интересная ссылка</a>
+</div>
+   </div>
+   <div class="box2" id="rectangle">Two</div>
+   <div class="box3" id="rectangle">Three</div>
+   <div class="box4" id="rectangle">Four</div>
+   <div class="box5" id="rectangle">Five</div>
+</div>
+ </form>
+{% endblock %}
