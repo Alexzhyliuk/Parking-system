@@ -1,6 +1,6 @@
 
 
-#form {
+.form {
   max-width: 333px;
   width: 90%;
   position: relative;
@@ -13,7 +13,7 @@
   box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
 }
 
-#head {
+.head {
   text-align: center;
 }
 
@@ -59,7 +59,7 @@
   color: inherit;
 }
 
-#form {
+.form {
   max-width: 333px;
   width: 90%;
   position: relative;
@@ -72,7 +72,7 @@
   box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
 }
 
-#head {
+.head {
   text-align: center;
 }
 
@@ -98,7 +98,11 @@
   text-shadow: initial;
 }
 
-#formum {
+.btn {
+    margin-top: 20px;
+}
+
+.form-input {
   background: none;
   border: none;
   border-bottom: 1px solid #434a52;
@@ -108,15 +112,17 @@
   color: inherit;
 }
 
-#formum2 {
-  background: none;
-  border: none;
-  border-bottom: 1px solid #434a52;
-  border-radius: 0;
-  box-shadow: none;
-  outline: none;
-  color: inherit;
+.form-input:focus {
+    background: none;
+    box-shadow: none;
+    outline: none;
+    color: inherit;
 }
 
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 

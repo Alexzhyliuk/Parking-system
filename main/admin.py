@@ -13,11 +13,15 @@ from .models import *
 #     search_fields = ('car_number', 'user')
 
 class ParkingPlaceTypeAdmin(admin.ModelAdmin):
-    list_display = ('is_open', 'is_near_exit', 'is_for_disabled')
+    list_display = ('is_open', 'location', 'is_for_disabled')
+
+
+class QuestionAdmin(admin.ModelAdmin):
+    readonly_fields = ('id',)
 
 
 admin.site.register(Profile)
-admin.site.register(Question)
+admin.site.register(Question, QuestionAdmin)
 admin.site.register(Parking)
 admin.site.register(ParkingPlace)
 admin.site.register(ParkingPlaceStatus)

@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/dh-navbar-inverse.css">
     <link rel="stylesheet" href="assets/css/Login-Red.css">
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
     <link rel="stylesheet" href="{% static 'main/css/nav_backgr.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/form_lk.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/places.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/global.css' %}">
 </head>
 
 <body>
@@ -21,13 +25,13 @@
     </div>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean navbar-inverse navbar-fixed-top" style="height: 85.775px;">
         <div class="container">
-            <div><a class="navbar-brand" style="padding:0px;margin-left:0px;height:78px;" href="#"> <img src="static/main/img/logo.png" width="239" height="239" style="height: 171.95px;margin-bottom: 22px;padding-left: 0px;margin-left: -17px;"></a><a href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button></div>
+            <div><a class="navbar-brand" style="padding:0px;margin-left:0px;height:78px;" href="#"> <img src="/static/main/img/logo.png" width="239" height="239" style="height: 171.95px;margin-bottom: 22px;padding-left: 0px;margin-left: -17px;"></a><a href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button></div>
             <h6 style="padding-bottom: 0px;margin-bottom: 34px;margin-top: 22px;padding-top: 8px;"></h6>
             <h1 style="margin-right: -126px;margin-left: -42px;">Parking for you</h1>
             <div class="collapse navbar-collapse" id="navcol-1" style="width: 150.05px;margin-left: 249px;padding-left: 0px;margin-bottom: 14px;">
                 <ul class="navbar-nav ms-auto" style="margin-top:13px;">
                     <li class="nav-item"></li>
-                       <li class="nav-item"><a class="nav-link" uk-scroll="offset:50" href="#">Парковочное пространство </a></li>
+                       <li class="nav-item"><a class="nav-link" uk-scroll="offset:50" href="{% url 'index' %}">Парковочное пространство </a></li>
                     <li class="nav-item"><a class="nav-link" uk-scroll="offset:100" href=" {% url 'about' %}">О нас</a></li>
                     <li class="nav-item" style="margin-left: 0px;"><a class="nav-link" uk-scroll="offset:100" href="{% url 'personal_area' %}">Личный кабинет</a></li>
 

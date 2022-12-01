@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Log',
             fields=[
-                ('login', models.CharField(max_length=50, verbose_name='Логин')),
+                ('registration', models.CharField(max_length=50, verbose_name='Логин')),
                 ('password', models.CharField(max_length=250, verbose_name='Пароль')),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='main.user')),
             ],

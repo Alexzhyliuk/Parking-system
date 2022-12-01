@@ -1,35 +1,42 @@
 {% extends 'main/header.html' %}
 {% block content %}
-<form id="form" style="font-family: Quicksand, sans-serif;background-color: rgba(44,40,52,0.9);width: 2500px;padding: 40px;">
-    <select id="" style="color:black; width: 500px; margin-left: 120px ">
-        <option>ул. Бобруйская 21</option>
-    </select> <br>
+<form action="." method="GET" enctype="multipart/form-data" class="form" style="font-family: Quicksand, sans-serif;background-color: rgba(44,40,52,0.9);width: 2500px;padding: 40px;">
+    {% csrf_token %}
+    {{ parking_form }}
+    <br>
     <h3 style="color: white;">Фильтр места:</h3>
-    <label for="open">Открытое</label>
-    <input type="checkbox" value="Открытое" id="open"> <br>
-    <label for="cover">Крытое</label>
-    <input type="checkbox" value="Открытое" id="cover"> <br>
-    <label for="enter">Рядом со входом</label>
-    <input type="checkbox" value="Открытое" id="enter"> <br>
-    <label for="exit">Рядом с выездом</label>
-    <input type="checkbox" value="Открытое" id="exit"> <br>
-    <label for="disabled">Для инвалидов</label>
-    <input type="checkbox" value="Открытое" id="disabled">
-<div class="wrapper">
-   <div class="places">
-       {% for place, booked in places.items %}
-        <div class="place {% if booked %}booked{% endif %}" data-id="{{ place }}">
-           {{ place }}
-           <div class="descr">
-                Открытое <br>
-                Возле выезда со стоянки <br>
-                {% if not booked %}
-                <a href="#">Забронировать</a>
-               {% endif %}
+    {{ type_form.as_p }}
+    <div class="form-group mb-3"></div> <button id="butonas" class="btn btn-light" style="width: 100%;height: 100%;margin-bottom: 10px;background-color: rgb(171,170,123);" type="submit">Показать</button>
+    <div class="wrapper">
+       <div class="places">
+           {% for place in places %}
+            <div class="place {% if place.is_booked %}booked{% endif %}" data-id="{{ place }}">
+               {{ place.number }}
+               <div class="descr">
+                    {{ place.get_info|safe }}
+
+                    {% if not place.is_booked and not user.profile.is_user_booking %}
+                    <a href="{% url 'booking' place.id %}">Забронировать</a>
+                    {% endif %}
+               </div>
            </div>
-       </div>
-       {% endfor %}
-   </div>
-</div>
-{% endblock %}
+           {% endfor %}
+        </div>
+
+        {% if messages %}
+          <h3 class="messages">
+            {% for message in messages %}
+            <div class="{{ message.tags }}">
+              <p>
+                {{ message|safe }}
+              </p>
+            </div>
+            {% endfor %}
+          </h3>
+        {% endif %}
+    </div>
 </form>
+<script>
+    $("input[type='checkbox']").prop('required', false)
+</script>
+{% endblock %}

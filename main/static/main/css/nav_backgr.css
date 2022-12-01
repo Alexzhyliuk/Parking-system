@@ -190,7 +190,7 @@ a, area, button, input, label, select, summary, textarea {
 
 .form-control:focus {
   color: #495057;
-  background-color: #fff;
+  background-color: none;
   border-color: #ff0000 !important;
   outline: 0;
   box-shadow: 0 0 0 .2rem rgba(255,0,0,0.25);

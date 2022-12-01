@@ -1,6 +1,6 @@
 
 
-#form {
+.form {
   max-width: 900px;
   width: 90%;
   position: relative;
@@ -13,7 +13,7 @@
   box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
 }
 
-#head {
+.head {
   text-align: center;
 }
 
@@ -59,7 +59,7 @@
   color: inherit;
 }
 
-#form {
+.form {
   max-width: 850px;
   width: 90%;
   position: relative;
@@ -72,7 +72,7 @@
   box-shadow: 3px 3px 4px rgba(0,0,0,0.2);
 }
 
-#head {
+.head {
   text-align: center;
 }
 
