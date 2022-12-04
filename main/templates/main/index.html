@@ -1,6 +1,6 @@
 {% extends 'main/header.html' %}
 {% block content %}
-<form action="." method="GET" enctype="multipart/form-data" class="form" style="font-family: Quicksand, sans-serif;background-color: rgba(44,40,52,0.9);width: 2500px;padding: 40px;">
+<form action="." method="GET" enctype="multipart/form-data" class="form" style="font-family: Quicksand, sans-serif;background-color: rgba(44,40,52,0.9);">
     {% csrf_token %}
     {{ parking_form }}
     <br>

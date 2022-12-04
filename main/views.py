@@ -23,10 +23,10 @@ class LoginView(View):
                 request, username=cd["username"], password=cd["password"]
             )
             if user is None:
-                return HttpResponse("Invalid login")
+                return redirect(reverse("login"))
 
             if not user.is_active:
-                return HttpResponse("Disabled account")
+                return redirect(reverse("login"))
 
             login(request, user)
             return redirect(reverse("index"))
